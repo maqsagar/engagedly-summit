@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>People + Strategy Summit - Employee Experience in the Age of AI</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+<style>
+        :root {
+            --brand-pink: #E84FAB;
+            --brand-blue: #376BFC;
+            --brand-dark: #0B1020;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #131a39 0%, #0b1020 50%, #0b1020 100%);
+            min-height: 100vh;
+        }
+
+        .colorful-heading {
+            background: linear-gradient(45deg, #E84FAB, #376BFC, #00D4AA);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease-in-out infinite;
+            
+        }
+
+        .colorful-heading h1
+        {
+            font-size: 45px !important;
+        }
+
+        .colorful-heading-alt {
+            background: linear-gradient(135deg, #376BFC, #E84FAB, #FFD700);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 4s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 9999px;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            background: var(--brand-pink);
+            border-radius: 1rem;
+            text-decoration: none;
+            box-shadow: 0 10px 15px -3px rgba(232, 79, 171, 0.3);
+            transition: all 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(232, 79, 171, 0.4);
+        }
+
+        .feature-card {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            transition: all 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule-item {
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+        }
+
+        .speaker-placeholder {
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: 0.75rem;
+        }
+
+        .sponsor-placeholder {
+            aspect-ratio: 3/2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 1rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            color: white;
+            font-size: 0.875rem;
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .gradient-overlay-pink {
+            background: radial-gradient(closest-side, var(--brand-pink), transparent);
+            width: 320px;
+            height: 320px;
+            left: -96px;
+            top: -96px;
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+
+        .gradient-overlay-blue {
+            background: radial-gradient(closest-side, var(--brand-blue), transparent);
+            width: 384px;
+            height: 384px;
+            right: -96px;
+            top: 96px;
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+
+        .hero-nashville {
+            background-image: linear-gradient(rgba(11, 16, 32, 0.6), rgba(11, 16, 32, 0.7)), url('https://page.gensparksite.com/v1/base64_upload/1c2521ab92d0f42b9721a7c70d2d454d');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-bottom: 50px;
+        }
+
+        .text-white h1{
+            padding-bottom: 10px;
+        }
+
+        /* Mini speaker cards used in the hero */
+        .speaker-card img { transition: transform .25s ease, box-shadow .25s ease; }
+        .speaker-card:hover img { transform: scale(1.045); box-shadow: 0 10px 20px rgba(0,0,0,.25); }
+
+                /* ===== Modern Agenda styles ===== */
+        .agenda-wrap { position: relative; }
+        
+        /* Sticky-looking day tabs */
+        .agenda-tabs { 
+            display: flex; 
+            gap: .75rem; 
+            background: rgba(255,255,255,.06); 
+            padding: .5rem; 
+            border-radius: 1.25rem; 
+            border: 1px solid rgba(255,255,255,.12); 
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px rgba(0,0,0,.12);
+            position: sticky;
+            top: 2rem;
+            z-index: 10;
+            margin-bottom: 2rem;
+        }
+        
+        .agenda-tab { 
+            appearance: none; 
+            border: 0; 
+            padding: .75rem 1.25rem; 
+            border-radius: 1rem; 
+            font-weight: 600; 
+            font-size: .95rem; 
+            color: rgba(255,255,255,.7); 
+            background: transparent; 
+            cursor: pointer; 
+            transition: all .3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .agenda-tab:before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,.1), rgba(255,255,255,.05));
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+        
+        .agenda-tab:hover:before {
+            opacity: 1;
+        }
+        
+        .agenda-tab.active { 
+            color: white; 
+            background: linear-gradient(135deg, rgba(232,79,171,.2), rgba(55,107,252,.2)); 
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,.2), 0 4px 16px rgba(0,0,0,.15);
+            transform: translateY(-1px);
+        }
+
+        .day-panel { 
+            display: none; 
+            animation: fadeIn .4s ease-in-out;
+        }
+        
+        .day-panel.active { 
+            display: block; 
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Modern timeline with gradient spine */
+        .timeline { 
+            position: relative; 
+            margin-left: 1rem; 
+            padding-left: 3rem;
+        }
+        
+        .timeline:before { 
+            content: ""; 
+            position: absolute; 
+            left: 1.25rem; 
+            top: 0; 
+            bottom: 0; 
+            width: 3px; 
+            background: linear-gradient(180deg, 
+                rgba(232,79,171,.8) 0%, 
+                rgba(55,107,252,.8) 50%, 
+                rgba(0,212,170,.6) 100%); 
+            border-radius: 1.5px;
+            box-shadow: 0 0 20px rgba(232,79,171,.3);
+        }
+        
+        .timeline-item { 
+            position: relative; 
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Luminous timeline dots */
+        .timeline-item:before { 
+            content: ""; 
+            position: absolute; 
+            left: -2.75rem; 
+            top: 1rem; 
+            width: 1rem; 
+            height: 1rem; 
+            border-radius: 50%; 
+            background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,.6)); 
+            box-shadow: 
+                0 0 0 4px rgba(255,255,255,.1), 
+                0 0 20px rgba(255,255,255,.4),
+                0 4px 12px rgba(0,0,0,.2);
+            z-index: 2;
+        }
+
+        /* Glassmorphism session cards with hover lift */
+        .session-card { 
+            padding: 1.25rem; 
+            border-radius: 1.25rem; 
+            background: rgba(255,255,255,.08); 
+            border: 1px solid rgba(255,255,255,.15); 
+            backdrop-filter: blur(12px); 
+            transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .session-card:before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,.05), transparent);
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+        
+        .session-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,.2), 0 0 0 1px rgba(255,255,255,.2);
+            background: rgba(255,255,255,.12);
+        }
+        
+        .session-card:hover:before {
+            opacity: 1;
+        }
+        
+        /* Session metadata with improved spacing */
+        .session-meta { 
+            display: flex; 
+            gap: .75rem; 
+            align-items: center; 
+            font-size: .9rem; 
+            color: rgba(255,255,255,.85);
+            margin-bottom: .75rem;
+        }
+        
+        .session-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            margin: .5rem 0;
+            line-height: 1.4;
+        }
+        
+        /* Modern track badges and chips */
+        .chip { 
+            padding: .35rem .75rem; 
+            border-radius: 50px; 
+            font-size: .75rem; 
+            font-weight: 500;
+            border: 1px solid rgba(255,255,255,.2); 
+            background: rgba(255,255,255,.1); 
+            transition: all .2s ease;
+        }
+        
+        /* Talent Management = Blue */
+        .track-talent { 
+            background: linear-gradient(135deg, rgba(55,107,252,.15), rgba(55,107,252,.25)); 
+            border-color: rgba(55,107,252,.4); 
+            color: #e3f2ff;
+            box-shadow: 0 0 20px rgba(55,107,252,.2);
+        }
+        
+        /* Frontline Success = Pink */
+        .track-frontline { 
+            background: linear-gradient(135deg, rgba(232,79,171,.15), rgba(232,79,171,.25)); 
+            border-color: rgba(232,79,171,.4); 
+            color: #ffe8f4;
+            box-shadow: 0 0 20px rgba(232,79,171,.2);
+        }
+        
+        /* Subtle tag chips */
+        .tag { 
+            background: rgba(255,255,255,.08); 
+            border: 1px dashed rgba(255,255,255,.25); 
+            color: rgba(255,255,255,.9);
+        }
+        
+        .tag.gather { background: rgba(0,212,170,.1); border-color: rgba(0,212,170,.3); color: #b3fff0; }
+        .tag.break { background: rgba(255,193,7,.1); border-color: rgba(255,193,7,.3); color: #fff8db; }
+        .tag.keynote { background: rgba(138,43,226,.1); border-color: rgba(138,43,226,.3); color: #f0e6ff; }
+        .tag.close { background: rgba(255,107,107,.1); border-color: rgba(255,107,107,.3); color: #ffe6e6; }
+        
+        /* Speaker attribution */
+        .speaker { 
+            font-style: italic; 
+            opacity: .9; 
+            font-size: .9rem;
+            color: rgba(255,255,255,.8);
+            text-align: right;
+            margin-top: .5rem;
+            font-weight: 400;
+        }
+        
+        /* Day headers */
+        .day-header { 
+            display: flex; 
+            align-items: center; 
+            gap: .75rem; 
+            font-weight: 700; 
+            letter-spacing: .02em; 
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .day-badge { 
+            padding: .5rem 1rem; 
+            border-radius: .875rem; 
+            background: linear-gradient(90deg, rgba(232,79,171,.2), rgba(55,107,252,.2)); 
+            border: 1px solid rgba(255,255,255,.2); 
+            font-size: .8rem;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 12px rgba(0,0,0,.1);
+        }
+        
+        /* Time styling */
+        .time-slot {
+            font-weight: 600;
+            color: rgba(255,255,255,.95);
+            min-width: 120px;
+        }
+        .colorful-heading { background: linear-gradient(45deg,#E84FAB,#376BFC,#00D4AA); background-size:200% 200%; -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation:gradientShift 4s ease infinite; }
+    @keyframes gradientShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+    .feature-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; padding: 1.5rem; }
+    .featured-speakers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .speaker-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 1.25rem; padding: 1.5rem; display: flex; align-items: flex-start; gap: 1.5rem; transition: all 0.3s ease; }
+    .speaker-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.07); }
+    .speaker-card img { width: 140px; height: 140px; border-radius: 0.75rem; object-fit: cover; }
+    .speaker-card h3 { font-size: 1.125rem; font-weight: 700; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.4rem; }
+    .speaker-card h3 a { color: #0A66C2; } /* LinkedIn blue */
+    .speaker-card p { color: rgba(255,255,255,0.75); font-size: 13px; line-height: 1.3; }
+    .speaker-card strong { padding-bottom: 10px}
+    </style>
+</head>
+<body>
+  <section id="agenda" class="relative border-t border-white border-opacity-10 py-16 text-white">
+        <div class="container agenda-wrap">
+            <div class="flex items-end justify-between gap-6 mb-6">
+                <div>
+                    <h2 class="colorful-heading text-3xl font-bold">Agenda</h2>
+                    <p class="mt-2 max-w-2xl text-white text-opacity-70">All session details are coming soon. Get ready for expert keynotes, client case studies, and hands-on breakouts across performance, goals, and modern communications—organized into two focused tracks: <b>Talent Management</b> and <b>Frontline Success</b></p>
+                </div>
+                <div class="agenda-tabs" role="tablist" aria-label="Agenda days">
+                    <button class="agenda-tab active" data-day="day1" role="tab" aria-selected="true">Day 1 · Tue, Nov 4</button>
+                    <button class="agenda-tab" data-day="day2" role="tab" aria-selected="false">Day 2 · Wed, Nov 5</button>
+                </div>
+            </div>
+
+            <!-- Day 1 Panel -->
+            <div id="day1" class="day-panel active">
+                <div class="day-header"><span class="day-badge">Day 1</span></div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">2:30–3:00 PM</span>
+                                <span class="chip tag gather">Gather</span>
+                            </div>
+                            <div class="session-title">Networking</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">3:00–3:15 PM</span>
+                                <span class="chip tag keynote">Welcome</span>
+                            </div>
+                            <div class="session-title">Engagedly's vision for Workforce and AI. Solutions for the future ready workforce.</div>
+                            <div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Sri Chellappa </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">3:15–4:00 PM</span>
+                                
+                            </div>
+                            <div class="session-title">Opening Keynote</div>
+                            <div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Susan Youngblood</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">4:00–4:30 PM</span>
+                                <span class="chip track-frontline">Fireside Chat</span>
+                            </div>
+                            <div class="session-title">Future of the Frontline</div>
+                            <div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Simon Rakosi & Patrick O'Hagan</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">5:30 PM</span>
+                                <span class="chip tag break">Networking</span>
+                            </div>
+                            <div class="session-title">Happy Hour</div>
+                        </div>
+                    </div>
+                    
+                    <!--<div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">6:30 PM Onwards</span>
+                                <span class="chip tag close">Evening Event</span>
+                            </div>
+                            <div class="session-title">Dinner</div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+
+            <!-- Day 2 Panel -->
+            <div id="day2" class="day-panel">
+                <div class="day-header"><span class="day-badge">Full Program</span></div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">8:00–9:00 AM</span>
+                                <span class="chip tag gather">Gather</span>
+                            </div>
+                            <div class="session-title">Breakfast</div>
+                        </div>
+                    </div>
+                    
+                   <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">9:00–9:45 AM</span>
+                                <span class="chip track-talent">Keynote</span>
+                            </div>
+                            <div class="session-title">The Future of Performance Management</div>
+                            <div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Edie Goldberg</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">9:45–10:00 AM</span>
+                                <span class="chip tag break">Break</span>
+                            </div>
+                            <div class="session-title">Coffee Break</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">10:00–10:35 AM</span>
+                                <span class="chip track-frontline">Skills Transformation </span>
+                            </div>
+                            <div class="session-title">The Skill Shift: Building Learning, Role Fit, and Workflow Intelligence into Everyday Operations</div>
+                            <div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Jayne Franchino</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">10:35–10:45 AM</span>
+                                <span class="chip tag break">Break</span>
+                            </div>
+                            <div class="session-title">Coffee Break</div>
+                        </div>
+                    </div>
+
+                     <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">10:45–11:15 AM</span>
+                                <span class="chip tag break">Breakout</span>
+                            </div>
+                            <div class="session-title">The Employee Engagement Evolution</div>
+                            <div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Melissa Handy</div>
+                        </div>
+                       
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">11:20 AM–11:50 PM</span>
+                                <span class="chip tag break">Breakout</span>
+                            </div>
+                            <div class="session-title">How Engagedly fits your strategy</div>
+                             <div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Alison B.</div>
+                        </div>
+                       
+                    </div>
+
+                      <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">11:20 AM–11:50 PM</span>
+                                <span class="chip tag break">Breakout</span>
+                            </div>
+                            <div class="session-title">Frontline Employee Listening Strategies</div>
+                             <div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Kim Tarpey</div>
+                        </div>
+                       
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">12:00–1:15 PM</span>
+                                <span class="chip track-talent">Lunch + Keynote</span>
+                            </div>
+                            <div class="session-title">Lunch</div>
+                            <div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">livingHR</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">1:30–2:00 PM</span>
+                                <span class="chip tag break">Breakout</span>
+                            </div>
+
+                            <div class="session-title">From Insights to Action: How Marissa AI Transforms HR</div>
+                            <div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Team Engagedly</div>
+                        </div>
+                        
+                    </div>
+
+                    
+                    
+                    <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">2:00–2:30 PM</span>
+                                <span class="chip track-talent">Keynote</span>
+                            </div>
+                            <div class="session-title">Peformance Management for Frontline and Remote Workers</div>
+                            <div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Chuck Hickman</div>
+                        </div>
+                    </div>
+                    
+                  
+
+                     <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">2:30–3:00 PM</span>
+                                <span class="chip track-frontline">Break</span>
+                            </div>
+                            <div class="session-title">Snacks</div>
+                            <!--<div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Leadership Team</div>-->
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">3:00–3:30 PM</span>
+                                <span class="chip track-talent">Closing Keynote</span>
+                            </div>
+                            <div class="session-title">From Listening to Doing: Redefining the Employee Journey for Safer, More Productive Operations</div>
+                            <div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Renée Ure</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="session-card">
+                            <div class="session-meta">
+                                <i class="fas fa-clock text-white/60"></i>
+                                <span class="time-slot">3:30–4:00 PM</span>
+                                <span class="chip track-frontline">Conference Close</span>
+                            </div>
+                            <div class="session-title">Final Thoughts</div>
+                            <div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Amy and Sri</div>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+</section>
+</body>
+</html>

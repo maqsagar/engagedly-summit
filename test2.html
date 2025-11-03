@@ -1,0 +1,109 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>People + Strategy Summit - Employee Experience in the Age of AI</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <style>
+    body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg,#131a39,#0b1020); color: white; }
+    .colorful-heading { background: linear-gradient(45deg,#E84FAB,#376BFC,#00D4AA); background-size:200% 200%; -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation:gradientShift 4s ease infinite; }
+    @keyframes gradientShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+    .feature-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; padding: 1.5rem; }
+    .featured-speakers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .speaker-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 1.25rem; padding: 1.5rem; display: flex; align-items: flex-start; gap: 1.5rem; transition: all 0.3s ease; }
+    .speaker-card:hover { transform: translateY(-3px); background: rgba(255,255,255,0.07); }
+    .speaker-card img { width: 140px; height: 140px; border-radius: 0.75rem; object-fit: cover; }
+    .speaker-card h3 { font-size: 1.125rem; font-weight: 700; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.4rem; }
+    .speaker-card h3 a { color: #0A66C2; } /* LinkedIn blue */
+    .speaker-card p { color: rgba(255,255,255,0.75); font-size: 0.9rem; line-height: 1.4; }
+  </style>
+</head>
+
+
+<body>
+<section id="featured" class="py-16 border-t border-white border-opacity-10">
+    <div class="container mx-auto px-4">
+      <h2 class="colorful-heading text-3xl font-bold mb-4">Featured Speakers</h2>
+      <p class="text-gray-300 mb-10">Meet the thought leaders and innovators driving transformation in AI, talent, frontline engagement, and employee experience across today’s workplaces.</p>
+      <!--<div class="featured-speakers">-->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="speaker-card">
+          <img src="https://engagedly.com/wp-content/uploads/2025/10/Renee-Ure.jpg" alt="Renée Ure">
+          <div>
+            <h3>Renée Ure <a href="https://www.linkedin.com/in/renee-ure/" target="_blank"><i class="fab fa-linkedin"></i></a></h3>
+            <p><strong><i>Co-Founder, Executive Leadership Insights</i></strong> </p>
+            <div style="padding:5px"></div>
+            <p>With decades at IBM and Lenovo, she’s led global transformation through AI, blockchain, and operational innovation.</p>
+          </div>
+        </div>
+        <div class="speaker-card">
+          <img src="https://engagedly.com/wp-content/uploads/2025/10/Jayne-Franchino.jpg" alt="Jayne Franchino ">
+          <div>
+            <h3>Jayne Franchino <a href="https://www.linkedin.com/in/jfranchino/" target="_blank"><i class="fab fa-linkedin"></i></a></h3>
+            <p><strong><i>Co-Founder, Executive Leadership Insights</i></strong> </p>
+            <div style="padding:5px"></div>
+            <p>Drawing on leadership roles at Pearson, Lenovo, and IBM, she helps organizations evolve through culture and innovation.</p>
+          </div>
+        </div>
+         <div class="speaker-card">
+          <img src="https://engagedly.com/wp-content/uploads/2025/10/Susan-Youngblood-eng.jpg" alt="Susan Youngblood">
+          <div>
+            <h3>Susan Youngblood <a href="https://www.linkedin.com/in/susanyoungblood/" target="_blank"><i class="fab fa-linkedin"></i></a></h3>
+            <p><strong><i>Advisor, Bessemer Venture</i></strong></p>
+            <div style="padding:5px"></div>
+            <p>GenAI and Human Capital advisor guiding CEOs to align people strategy and technology for sustainable transformation.</p>
+          </div>
+        </div>
+        <div class="speaker-card">
+          <img src="https://engagedly.com/wp-content/uploads/2025/10/chuck-hickman-eng.jpg" alt="Chuck Hickman">
+          <div>
+            <h3>Chuck Hickman <a href="https://www.linkedin.com/in/chuck-hickman" target="_blank"><i class="fab fa-linkedin"></i></a></h3>
+            <p><strong><i>Global Talent & Development Leader,</strong> at <strong>Dura-Line</i></strong></p>
+            <div style="padding:5px"></div>
+            <p>Leads global talent and development initiatives focused on leadership growth, performance, and organizational transformation.</p>
+          </div>
+        </div>
+        <div class="speaker-card">
+          <img src="https://engagedly.com/wp-content/uploads/2025/10/Edie-Eng-Sub.jpg" alt="Edie Goldberg">
+          <div>
+            <h3>Edie Goldberg <a href="https://www.linkedin.com/in/ediegoldberg/" target="_blank"><i class="fab fa-linkedin"></i></a></h3>
+            <p><strong><i>President & Founder, Edie Goldberg & Associates</strong></i></p>
+            <div style="padding:5px"></div>
+            <p>Future of Work expert, author, and former SHRM Foundation Chair advising global firms on talent, culture, and innovation.</p>
+          </div>
+        </div>
+        <div class="speaker-card">
+          <img src="https://engagedly.com/wp-content/uploads/2025/10/Karyn-Detje-eng.jpg" alt="Karyn Detje">
+          <div>
+            <h3>Karyn Detje<a href="hhttps://www.linkedin.com/in/karyndetje/" target="_blank"><i class="fab fa-linkedin"></i></a></h3>
+            <p><strong><i>Founder, FABRIC</strong></i></p>
+            <div style="padding:5px"></div>
+            <p>Former CHRO at Tory Burch and Publicis Group, helping organizations build engaged, high-performing, and people-focused cultures. </p>
+          </div>
+        </div>
+        <div class="speaker-card">
+          <img src="https://engagedly.com/wp-content/uploads/2025/09/Sc-cover.jpg" alt="Sri Chellappa">
+          <div>
+            <h3>Sri Chellappa <a href="https://www.linkedin.com/in/srichellappa/" target="_blank"><i class="fab fa-linkedin"></i></a></h3>
+            <p><strong><i>CEO & Co-Founder</strong> of <strong>Engagedly</i></strong></p>
+            <div style="padding:5px"></div>
+            <p>An AI entrepreneur and filmmaker redefining performance, engagement, and growth through innovation, empathy, and storytelling.</p>
+          </div>
+        </div>
+        <div class="speaker-card">
+          <img src="https://engagedly.com/wp-content/uploads/2025/09/Simon-Rakosi_cover.jpg" alt="Simon Rakosi">
+          <div>
+            <h3>Simon Rakosi <a href="https://www.linkedin.com/in/simonrakosi/" target="_blank"><i class="fab fa-linkedin"></i></a></h3>
+            <p><strong><i>GM-Frontline Solutions, Engagedly</i></strong></p>
+            <div style="padding:5px"></div>
+            <p>Combines experience from Coca-Cola and Leo Burnett to champion frontline engagement, empowerment, and workforce transformation.</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,688 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People + Strategy Summit - Employee Experience in the Age of AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <meta property="og:image" content="https://engagedly.com/wp-content/uploads/2025/09/People-Strategy-Summit.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <style>
+        :root {
+            --brand-pink: #E84FAB;
+            --brand-blue: #376BFC;
+            --brand-dark: #0B1020;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #131a39 0%, #0b1020 50%, #0b1020 100%);
+            min-height: 100vh;
+        }
+
+        .colorful-heading {
+            background: linear-gradient(45deg, #E84FAB, #376BFC, #00D4AA);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease-in-out infinite;
+            
+        }
+
+        .colorful-heading h1
+        {
+            font-size: 45px !important;
+        }
+
+        .colorful-heading-alt {
+            background: linear-gradient(135deg, #376BFC, #E84FAB, #FFD700);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 4s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 9999px;
+            backdrop-filter: blur(10px);
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            background: var(--brand-pink);
+            border-radius: 1rem;
+            text-decoration: none;
+            box-shadow: 0 10px 15px -3px rgba(232, 79, 171, 0.3);
+            transition: all 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(232, 79, 171, 0.4);
+        }
+
+        .feature-card {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            transition: all 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule-item {
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+        }
+
+        .speaker-placeholder {
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: 0.75rem;
+        }
+
+        .sponsor-placeholder {
+            aspect-ratio: 3/2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 1rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            color: white;
+            font-size: 0.875rem;
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .gradient-overlay-pink {
+            background: radial-gradient(closest-side, var(--brand-pink), transparent);
+            width: 320px;
+            height: 320px;
+            left: -96px;
+            top: -96px;
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+
+        .gradient-overlay-blue {
+            background: radial-gradient(closest-side, var(--brand-blue), transparent);
+            width: 384px;
+            height: 384px;
+            right: -96px;
+            top: 96px;
+            border-radius: 50%;
+            filter: blur(60px);
+        }
+
+        .hero-nashville {
+            background-image: linear-gradient(rgba(11, 16, 32, 0.6), rgba(11, 16, 32, 0.7)), url('https://page.gensparksite.com/v1/base64_upload/1c2521ab92d0f42b9721a7c70d2d454d');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-bottom: 50px;
+        }
+
+        .text-white h1{
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body class="text-white">
+    <!-- Header -->
+    <header class="relative z-20 border-b border-white border-opacity-10 bg-gray-900 bg-opacity-60 backdrop-blur">
+        <div class="container flex items-center justify-between h-16">
+            <a href="#top" class="flex items-center gap-2 text-white no-underline">
+                <img src="https://engagedly.com/wp-content/uploads/2025/09/eab-summit-logo.svg">
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm text-white text-opacity-80">
+                <a href="#why" class="hover:text-white">Why Attend</a>
+                <a href="#agenda" class="hover:text-white">Agenda</a>
+                <a href="#speakers" class="hover:text-white">Speakers</a>
+                <a href="#sponsors" class="hover:text-white">Sponsors</a>
+                <a href="#venue" class="hover:text-white">Venue</a>
+                <a href="#register" class="cta-button">Register Free</a>
+            </nav>
+            <div class="md:hidden">
+                <a href="#register" class="cta-button text-sm px-4 py-2">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="top" class="hero-nashville relative overflow-hidden pt-16 text-white">
+        <div class="gradient-overlay">
+            <div class="gradient-overlay-pink"></div>
+            <div class="gradient-overlay-blue"></div>
+        </div>
+
+        <div class="container relative text-center py-20 md:py-32">
+            <div class="max-w-4xl mx-auto">
+               
+                <h1 class="colorful-heading text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight">
+                    People <span class="text-white text-opacity-70">+</span> Strategy Summit
+                </h1>
+                <p class="mt-4 text-xl text-white text-opacity-80">
+                    Employee Experience in the Age of AI
+                </p>
+
+                <div class="mt-8 flex flex-col sm:flex-row justify-center gap-6 text-white text-opacity-90">
+                    <div class="inline-flex items-center justify-center gap-3">
+                        <i class="fas fa-calendar-days text-white text-opacity-70"></i>
+                        <span>
+                            <b>Nov 4–5, 2025</b>
+                        </span>
+                    </div>
+                    <div class="inline-flex items-center justify-center gap-3">
+                        <i class="fas fa-map-pin text-white text-opacity-70"></i>
+                        <span>
+                            <b>Hotel Indigo – Countrypolitan</b>, Nashville, TN
+                        </span>
+                    </div>
+                </div>
+
+                <div class="mt-10 flex flex-wrap justify-center items-center gap-4">
+                    <a href="#register" class="cta-button">Reserve Your Seat</a>
+                    <a href="#agenda" class="inline-flex items-center gap-2 text-white text-opacity-80 hover:text-white">
+                        See Agenda
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+
+                <p class="mt-8 max-w-4xl mx-auto text-white text-opacity-60" style="color:#F5F5F5; font-size: 20px;">
+                    We’re excited to host our first live client vent with <b>Engagedly, theEMPLOYEEapp,</b> and <b>butterfly.ai! </b>Join us for expert keynotes, client stories, and networking—featuring two tracks: <b>Talent Management</b> and <b>Frontline Success</b>. Complimentary to attend!
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Attend -->
+    <section id="why" class="relative border-t border-white border-opacity-10 py-14 text-white">
+        <div class="container">
+            <h2 class="colorful-heading-alt text-3xl font-bold mb-8">Why Attend</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card">
+                    <div class="inline-flex p-2 mb-3 bg-white bg-opacity-10 rounded-xl text-white text-opacity-90">
+                        <img src="https://engagedly.com/wp-content/uploads/2025/09/client-summit-playbook.png" style="height: 30px; width: 30px;">
+
+                    </div>
+                    <h3 class="text-lg font-semibold">Actionable Playbooks</h3>
+                    <p class="mt-2 text-sm text-white text-opacity-70">Learn proven practices from HR experts and peer leaders: performance, coaching, goals, and AI‑assisted workflows.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="inline-flex p-2 mb-3 bg-white bg-opacity-10 rounded-xl text-white text-opacity-90">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold">Client‑Led Breakouts</h3>
+                    <p class="mt-2 text-sm text-white text-opacity-70">Engagedly and theEMPLOYEEapp customers share what works: templates, roll‑out tips, and adoption levers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="inline-flex p-2 mb-3 bg-white bg-opacity-10 rounded-xl text-white text-opacity-90">
+                        <img src="https://engagedly.com/wp-content/uploads/2025/09/client-summit-connections.png" style="height: 30px; width: 30px;">
+                    </div>
+                    <h3 class="text-lg font-semibold">Real Connections</h3>
+                    <p class="mt-2 text-sm text-white text-opacity-70">Plenty of time to network with peers and the Engagedly team. Leave with contacts you can lean on.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda -->
+    <section id="agenda" class="relative border-t border-white border-opacity-10 py-16 text-white">
+        <div class="container">
+            <div class="flex items-end justify-between gap-6">
+                <div>
+                    <h2 class="colorful-heading text-3xl font-bold">Agenda</h2>
+                    <p class="mt-2 max-w-2xl text-white text-opacity-70">All session details are coming soon. Get ready for expert keynotes, client case studies, and hands-on breakouts across performance, goals, and modern communications—organized into two focused tracks: <b>Talent Management</b> and <b>Frontline Success</b></p>
+                </div>
+                <div class="pill">Draft schedule</div>
+            </div>
+
+            <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Day 1 -->
+                <div class="bg-white bg-opacity-5 border border-white border-opacity-10 rounded-2xl p-6">
+                    <div class="mb-3 inline-flex items-center gap-2 text-sm text-white text-opacity-80">
+                        <i class="fas fa-calendar-days"></i>
+                        <span>Tuesday, Nov 4</span>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="schedule-item">
+                            <div class="flex items-center gap-3 text-sm text-white text-opacity-80">
+                                <i class="fas fa-clock"></i>
+                                <span class="font-medium">2:30-3:00 PM</span>
+                                <span class="ml-auto bg-white bg-opacity-10 px-2 py-0.5 rounded-full text-xs text-white text-opacity-80">Gather</span>
+                            </div>
+                            <p class="mt-1 text-base font-semibold">Networking</p>
+                        </li>
+                        <li class="schedule-item">
+                            <div class="flex items-center gap-3 text-sm text-white text-opacity-80">
+                                <i class="fas fa-clock"></i>
+                                <span class="font-medium">3:00–4:00 pm</span>
+                                <span class="ml-auto bg-white bg-opacity-10 px-2 py-0.5 rounded-full text-xs text-white text-opacity-80">Opening Session</span>
+                            </div>
+                            <p class="mt-1 text-base font-semibold">Engagedly’s AI Journey</p><div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Sri Chellappa </div>
+                        </li>
+                        <li class="schedule-item">
+                            <div class="flex items-center gap-3 text-sm text-white text-opacity-80">
+                                <i class="fas fa-clock"></i>
+                                <span class="font-medium">4:00–5:30 pm</span>
+                                <span class="ml-auto bg-white bg-opacity-10 px-2 py-0.5 rounded-full text-xs text-white text-opacity-80">AI in practice</span>
+                            </div>
+                            <p class="mt-1 text-base font-semibold">Future of the Frontline</p><div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Simon Rakosi and Patrick O'Hagan</div>
+                        </li>
+                        <li class="schedule-item">
+                            <div class="flex items-center gap-3 text-sm text-white text-opacity-80">
+                                <i class="fas fa-clock"></i>
+                                <span class="font-medium">5:30 pm</span>
+                                <span class="ml-auto bg-white bg-opacity-10 px-2 py-0.5 rounded-full text-xs text-white text-opacity-80">Breakout</span>
+                            </div>
+                            <p class="mt-1 text-base font-semibold">Happy Hour</p>
+                        </li>
+                        <li class="schedule-item">
+                            <div class="flex items-center gap-3 text-sm text-white text-opacity-80">
+                                <i class="fas fa-clock"></i>
+                                <span class="font-medium">5:30 pm</span>
+                                <span class="ml-auto bg-white bg-opacity-10 px-2 py-0.5 rounded-full text-xs text-white text-opacity-80">Breakout</span>
+                            </div>
+                            <p class="mt-1 text-base font-semibold">Dinner</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="bg-white bg-opacity-5 border border-white border-opacity-10 rounded-2xl p-6">
+                    <div class="mb-3 inline-flex items-center gap-2 text-sm text-white text-opacity-80">
+                        <i class="fas fa-calendar-days"></i>
+                        <span>Wednesday, Nov 5</span>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="schedule-item">
+                            <div class="flex items-center gap-3 text-sm text-white text-opacity-80">
+                                <i class="fas fa-clock"></i>
+                                <span class="font-medium">8:00–9:00 am</span>
+                                <span class="ml-auto bg-white bg-opacity-10 px-2 py-0.5 rounded-full text-xs text-white text-opacity-80">Gather</span>
+                            </div>
+                            <p class="mt-1 text-base font-semibold">Breakfast & Networking</p>
+                        </li>
+                        <li class="schedule-item">
+                            <div class="flex items-center gap-3 text-sm text-white text-opacity-80">
+                                <i class="fas fa-clock"></i>
+                                <span class="font-medium">9:00–10:00 am</span>
+                                <span class="ml-auto bg-white bg-opacity-10 px-2 py-0.5 rounded-full text-xs text-white text-opacity-80">Keynotes</span>
+                            </div>
+                            <p class="mt-1 text-base font-semibold">Embracing AI and the Employee Experience</p><div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Drew Fortin</div>
+                        </li>
+                     
+                        <li class="schedule-item">
+                            <div class="flex items-center gap-3 text-sm text-white text-opacity-80">
+                                <i class="fas fa-clock"></i>
+                                <span class="font-medium">10:00–10:35 am</span>
+                                <span class="ml-auto bg-white bg-opacity-10 px-2 py-0.5 rounded-full text-xs text-white text-opacity-80">AI In Practice</span>
+                            </div>
+                            <p class="mt-1 text-base font-semibold">Client Panel</p>
+                        </li>
+                        <li class="schedule-item">
+                            <div class="flex items-center gap-3 text-sm text-white text-opacity-80">
+                                <i class="fas fa-clock"></i>
+                                <span class="font-medium">11:30–12:00 pm</span>
+                                <span class="ml-auto bg-white bg-opacity-10 px-2 py-0.5 rounded-full text-xs text-white text-opacity-80">Archer Mech </span>
+                            </div>
+                            <p class="mt-1 text-base font-semibold">The Employee Engagement Evolution</p><div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Melissa Handy</div>
+                        </li>
+                        <li class="schedule-item">
+                            <div class="flex items-center gap-3 text-sm text-white text-opacity-80">
+                                <i class="fas fa-clock"></i>
+                                <span class="font-medium">2:00–2:30 pm</span>
+                                <span class="ml-auto bg-white bg-opacity-10 px-2 py-0.5 rounded-full text-xs text-white text-opacity-80">Gray, Gray, Gray</span>
+                            </div>
+                            <p class="mt-1 text-base font-semibold">How Engagedly fits your strategy</p><div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Alison</div>
+                        </li>
+                        <li class="schedule-item">
+                            <div class="flex items-center gap-3 text-sm text-white text-opacity-80">
+                                <i class="fas fa-clock"></i>
+                                <span class="font-medium">2:00–2:30 pm</span>
+                                <span class="ml-auto bg-white bg-opacity-10 px-2 py-0.5 rounded-full text-xs text-white text-opacity-80">Pitney Bowes</span>
+                            </div>
+                            <p class="mt-1 text-base font-semibold">Frontline Employee Listening Strategies</p><div style="text-align: right; font-style: italic; font-size: 15px;    margin-top: -25px;">Kim</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-white bg-opacity-5 border border-dashed border-white border-opacity-15 rounded-2xl p-5 text-sm text-white text-opacity-70">
+                Looking to propose a talk or share a case study? Email <a class="text-white underline" href="mailto:marketing@engagedly.com">marketing@engagedly.com</a>.
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers -->
+    <section id="speakers" class="relative border-t border-white border-opacity-10 py-16 text-white">
+        <div class="container">
+            <div class="flex items-end justify-between gap-6">
+                <div>
+                    <h2 class="colorful-heading-alt text-3xl font-bold">Speakers</h2>
+                    <p class="mt-2 max-w-2xl text-white text-opacity-70">A mix of industry experts and customer leaders. Full lineup to be announced soon.</p>
+                </div>
+                <div class="pill">More to be announced</div>
+            </div>
+
+
+            <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                <!--<div class="bg-white bg-opacity-5 border border-white border-opacity-10 rounded-2xl p-3" style="color: white;">
+                    <div class="speaker-placeholder w-full"><img src="https://engagedly.com/wp-content/uploads/2025/09/drew-fortin_cover.jpg"></div>
+                    <div class="mt-3">
+                        <div class="text-sm font-semibold">Drew Fortin</div>
+                        <div class="text-xs text-white text-opacity-60">Founder & CEO @ Lever Talent</div>
+                    </div>
+                </div>-->
+                <div class="bg-white bg-opacity-5 border border-white border-opacity-10 rounded-2xl p-3" style="color: white;">
+                    <div class="speaker-placeholder w-full"><img src="https://engagedly.com/wp-content/uploads/2025/09/Melissa-Handy.jpg"></div>
+                    <div class="mt-3">
+                        <div class="text-sm font-semibold">Melissa Handy</div>
+                        <div class="text-xs text-white text-opacity-60">Coordinator and facilitator, Archer Mechanical </div>
+                    </div>
+                </div>
+                <div class="bg-white bg-opacity-5 border border-white border-opacity-10 rounded-2xl p-3" style="color: white;">
+                    <div class="speaker-placeholder w-full"><img src="https://engagedly.com/wp-content/uploads/2025/10/Edie-Eng-Sub.jpg"></div>
+                    <div class="mt-3">
+                        <div class="text-sm font-semibold">Edie Goldberg</div>
+                        <div class="text-xs text-white text-opacity-60">President and founder, Edie Goldberg and Associates</div>
+                    </div>
+                </div>
+                <div class="bg-white bg-opacity-5 border border-white border-opacity-10 rounded-2xl p-3" style="color: white;">
+                    <div class="speaker-placeholder w-full"><img src="https://engagedly.com/wp-content/uploads/2025/09/Sc-cover.jpg"></div>
+                    <div class="mt-3">
+                        <div class="text-sm font-semibold">Sri Chellappa</div>
+                        <div class="text-xs text-white text-opacity-60">CEO & Co Founder, Engagedly</div>
+                    </div>
+                </div>
+                <div class="bg-white bg-opacity-5 border border-white border-opacity-10 rounded-2xl p-3" style="color: white;">
+                    <div class="speaker-placeholder w-full"><img src="https://engagedly.com/wp-content/uploads/2025/09/Simon-Rakosi_cover.jpg"></div>
+                    <div class="mt-3">
+                        <div class="text-sm font-semibold">Simon Rakosi</div>
+                        <div class="text-xs text-white text-opacity-60">GM Frontline Solutions, Engagedly</div>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-5 border border-white border-opacity-10 rounded-2xl p-3" style="color: white;">
+                    <div class="speaker-placeholder w-full"><img src="https://engagedly.com/wp-content/uploads/2025/09/paddy.png"></div>
+                    <div class="mt-3">
+                        <div class="text-sm font-semibold">Patrick O'Hagan</div>
+                        <div class="text-xs text-white text-opacity-60">Customer Success Manager, Engagedly</div>
+                    </div>
+                </div>
+                <!--
+                <div class="bg-white bg-opacity-5 border border-white border-opacity-10 rounded-2xl p-3" style="color: white;">
+                    <div class="speaker-placeholder w-full"></div>
+                    <div class="mt-3">
+                        <div class="text-sm font-semibold">TBA</div>
+                        <div class="text-xs text-white text-opacity-60">Announcing soon</div>
+                    </div>
+                </div>
+                <div class="bg-white bg-opacity-5 border border-white border-opacity-10 rounded-2xl p-3" style="color: white;">
+                    <div class="speaker-placeholder w-full"></div>
+                    <div class="mt-3">
+                        <div class="text-sm font-semibold">TBA</div>
+                        <div class="text-xs text-white text-opacity-60">Announcing soon</div>
+                    </div>
+                </div>
+                <div class="bg-white bg-opacity-5 border border-white border-opacity-10 rounded-2xl p-3" style="color: white;">
+                    <div class="speaker-placeholder w-full"></div>
+                    <div class="mt-3">
+                        <div class="text-sm font-semibold">TBA</div>
+                        <div class="text-xs text-white text-opacity-60">Announcing soon</div>
+                    </div>
+                </div> -->
+            </div> 
+        </div>
+    </section>
+
+    <!-- Sponsors -->
+    <section id="sponsors" class="relative border-t border-white border-opacity-10 py-16 text-white">
+        <div class="container">
+            <div class="flex items-end justify-between gap-6">
+                <div>
+                    <h2 class="colorful-heading text-3xl font-bold">Clients</h2>
+                    <p class="mt-2 max-w-2xl text-white text-opacity-70">We’re excited to have our valued clients participating in the upcoming Summit. Here are some of the organizations joining us this year:.</p>
+                </div>
+                <!--<div class="pill">Partner with us</div>-->
+            </div>
+            <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4" >
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src="https://engagedly.com/wp-content/uploads/2025/09/grey.png"></span>
+                </div>
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src="https://engagedly.com/wp-content/uploads/2025/09/gelbgroup.png"></span>
+                </div>
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src="https://engagedly.com/wp-content/uploads/2025/09/Origence-logo.png"></span>
+                </div>
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src="https://engagedly.com/wp-content/uploads/2025/09/MMYglobal_mmy_white.png"></span>
+                </div>
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src="https://engagedly.com/wp-content/uploads/2025/09/National-fund.png"></span>
+                </div>
+             
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src="https://engagedly.com/wp-content/uploads/2025/09/chicksaw.png"></span>
+                </div>
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src="https://engagedly.com/wp-content/uploads/2025/09/vetio-1.png"></span>
+                </div>
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src="https://engagedly.com/wp-content/uploads/2025/09/Archer.png"></span>
+                </div>
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src="https://engagedly.com/wp-content/uploads/2025/09/aquiline.png"></span>
+                </div>
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src="https://engagedly.com/wp-content/uploads/2025/10/Safari-Destination.png"></span>
+                </div>
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src="https://engagedly.com/wp-content/uploads/2025/10/RWE.png"></span>
+                </div> 
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src="https://engagedly.com/wp-content/uploads/2025/10/Perimter.png"></span>
+                </div>
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src="https://engagedly.com/wp-content/uploads/2025/10/Hope.png"></span>
+                </div> 
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src="https://engagedly.com/wp-content/uploads/2025/10/Fabric.png"></span>
+                </div>
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src="https://engagedly.com/wp-content/uploads/2025/10/Denso.png"></span>
+                </div> 
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src="https://engagedly.com/wp-content/uploads/2025/10/Perimeter.png"></span>
+                </div><!--
+                <div class="sponsor-placeholder">
+                    <span class="text-xs font-medium tracking-wide text-white text-opacity-50"><img src=""></span>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue -->
+    <section id="venue" class="relative border-t border-white border-opacity-10 py-16 text-white">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="colorful-heading-alt text-3xl font-bold">The Venue</h2>
+                    <p class="mt-2 max-w-xl text-white text-opacity-70">
+                        <b>Hotel Indigo – Countrypolitan</b> blends Nashville's music‑city charm with modern spaces perfect for learning and connection. Steps from iconic live music and great food.
+                    </p>
+                    <ul class="mt-5 space-y-2 text-white text-opacity-80">
+                        <li class="flex items-center gap-3"><i class="fas fa-map-pin"></i> 315 Union St, Nashville, TN 37201</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-calendar-days"></i> Nov 4–5, 2025</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-clock"></i> Day‑1 Reception · Day‑2 Full Program</li>
+                    </ul>
+                    <div class="mt-6 flex gap-3">
+                        <a class="bg-white bg-opacity-5 border border-white border-opacity-15 px-4 py-2 text-sm text-white hover:bg-white hover:bg-opacity-10 rounded-xl" href="https://maps.app.goo.gl/7K3BFifDmPicEWfP7" target="_blank" rel="noreferrer">Open in Google Maps</a>
+                        <a class="bg-white bg-opacity-5 border border-white border-opacity-15 px-4 py-2 text-sm text-white hover:bg-white hover:bg-opacity-10 rounded-xl" href="https://www.ihg.com/hotelindigo/hotels/us/en/find-hotels/select-roomrate?fromRedirect=true&qSrt=sBR&qIta=99801505&icdv=99801505&qSlH=bnaus&qCiD=04&qCiMy=102025&qCoD=06&qCoMy=102025&qGrpCd=ENG&qAAR=6CBARC&qRtP=6CBARC&setPMCookies=true&qSHBrC=IN&qDest=315%20Union%20Street,%20Nashville,%20TN,%20US&showApp=true&adjustMonth=false&srb_u=1&qRmFltr=" target="_blank" rel="noreferrer">Hotel Website</a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=80&auto=format&fit=crop" alt="Venue" class="h-36 sm:h-44 md:h-48 w-full rounded-xl object-cover mt-6">
+                    <img src="https://engagedly.com/wp-content/uploads/2025/09/client-summit-forth.png" alt="Venue" class="h-36 sm:h-44 md:h-48 w-full rounded-xl object-cover">
+                    <img src="https://images.unsplash.com/photo-1496412705862-e0088f16f791?w=900&q=80&auto=format&fit=crop" alt="Venue" class="h-36 sm:h-44 md:h-48 w-full rounded-xl object-cover mt-6">
+                    <img src="https://engagedly.com/wp-content/uploads/2025/09/Hotel-Indigo-–-Countrypolitan.jpg" alt="Venue" class="h-36 sm:h-44 md:h-48 w-full rounded-xl object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration -->
+    <section id="register" class="relative border-t border-white border-opacity-10 py-16 text-white">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="colorful-heading text-3xl font-bold">Reserve Your Complimentary Pass</h2>
+                    <p class="mt-2 max-w-xl text-white text-opacity-70">
+                        Space is limited. Submit your details and we'll confirm your spot. If you already have a registration link, the primary button can redirect there instead of using this form.
+                    </p>
+                    <!--<div class="mt-6 flex gap-3">
+                        <a href="#register" class="cta-button">Register Now</a>
+                        <a href="#why" class="bg-white bg-opacity-5 border border-white border-opacity-15 px-4 py-2 text-sm text-white hover:bg-white hover:bg-opacity-10 rounded-xl">Why attend?</a>
+                    </div>-->
+                </div>
+
+                <div class="bg-white bg-opacity-5 border border-white border-opacity-10 rounded-2xl p-6 maqsood">
+                  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    portalId: "41809",
+    formId: "348f131b-38c4-456c-a87a-f705da5e4d9c",
+    region: "na1"
+  });
+</script>
+<style>
+    .maqsood #firstname-348f131b-38c4-456c-a87a-f705da5e4d9c
+    {
+            width: 100%;
+    padding: 0.5rem 0.75rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    color: white;
+    font-size: 0.875rem;
+    outline: none;
+    }
+
+    .maqsood #email-348f131b-38c4-456c-a87a-f705da5e4d9c
+    {
+            width: 100%;
+    padding: 0.5rem 0.75rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    color: white;
+    font-size: 0.875rem;
+    outline: none;
+    }
+
+    .maqsood .hs-button
+    {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: var(--brand-pink);
+    border-radius: 1rem;
+    text-decoration: none;
+    box-shadow: 0 10px 15px -3px rgba(232, 79, 171, 0.3);
+    transition: all 0.2s;
+    width: 100%;
+    }
+
+    .maqsood p {
+        font-size: 11px;
+    }
+
+    .legal-consent-container .hs-form-booleancheckbox-display input { margin-top : 8px }
+
+</style>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white border-opacity-10 py-10 text-white">
+        <div class="container flex flex-col sm:flex-row items-center justify-between gap-6">
+            <p class="text-sm text-white text-opacity-60">© 2025 Engagedly, Inc. • People + Strategy Summit</p>
+            <div class="flex items-center gap-4 text-sm text-white text-opacity-70">
+                <a class="hover:text-white" href="mailto:marketing@engagedly.com">Contact</a>
+                <a class="hover:text-white" href="#register">Register</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+
