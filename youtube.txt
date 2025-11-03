@@ -1,0 +1,217 @@
+#new , #song , #letestsong , #song , #letestsong , #newsong , #new , #bhojpuri , #lovesong , #love , #bollywoodsongs  , #bollywood , #song , #jubinnautiyal , #nehakakkar , #song , #song , #2023songs , #bollywood , #2022song , #song , #bollywood , #letestsong , #live , #like , #mahadev , #letestsong , #lovesong , #lovestory , #sad
+
+गरीब की शादी - Kahani _ Hindi Kahaniya _ Bedtime Moral Stories _ Fairy tales _ Hindi Fairy Tales(360P)
+
+#mohdrafi, #dilipkumar, #bollywood, #bollywoodtrivia, #hindicinema, #hindimovies, #actor, #musicdirector, #music, #composer, #actress, #hindiactor, #bollywoodactors, #hindi, #movies, #trivia, #indi
+9791
+
+https://drive.google.com/drive/folders/1KJSJL0b5TSGHX9FrdD1wBjkb58o2H9Lx
+
+#resetmacbook, #macbook, #macbookpro, #macbookair, #mac, #macos
+
+
+
+
+smb-workspace-renewals@google.com
+
+
+Requied discount
+
+mentoringcomplete.co
+engagedlyhr.io
+getengagedly.com
+
+
+AtuD13HW
+
+
+7008953853
+
+
+custo
+
+
+
+customer.enablement@engagedly.com
+
+
+
+
+<audio loop controls id="rock-audio"> 
+  <source src="/wp-content/uploads/audio/rock-audio.mp3" type="audio/mpeg"> 
+</audio>
+<audio loop controls id="desert-audio"> 
+  <source src="/wp-content/uploads/audio/desert-audio.mp3" type="audio/mpeg"> 
+</audio>
+<audio loop controls id="pond-audio"> 
+  <source src="/wp-content/uploads/audio/pond-audio.mp3" type="audio/mpeg"> 
+</audio>
+<audio loop controls id="snow-audio"> 
+  <source src="/wp-content/uploads/audio/snow-audio.mp3" type="audio/mpeg"> 
+</audio>
+<audio loop controls id="beach-audio"> 
+  <source src="/wp-content/uploads/audio/beach-audio.mp3" type="audio/mpeg"> 
+</audio>
+
+
+
+
+<img class="mute mute-button" src="/wp-content/uploads/2023/10/mute.png" alt="Mute button"/>
+
+<img class="unmute mute-button" src="/wp-content/uploads/2023/10/unmute.png" alt="Unmute button"/>
+
+
+
+Thank you. I have scheduled you a callback for now. You will receive call in few minutes.
+
+If in case you miss the call, you can directly call them through this number: 000800 1009009.
+
+
+
+
+
+<img class="mute mute-button" src="/wp-content/uploads/2023/10/mute.png" alt="Mute button"/>
+
+<img class="unmute mute-button" src="/wp-content/uploads/2023/10/unmute.png" alt="Unmute button" />
+
+
+
+<style>
+a:link {
+  color: #b2d6ff;
+}
+
+
+a:visited {
+  color: green;
+}
+
+
+a:hover {
+  color: red;
+}
+
+a:active {
+  color: blue;
+}
+   
+
+</style>
+
+02 Jan 2024Bbnl Eb
+₹ 4,786.78
+31 Dec 2023Irctc Mpp New Delhi In
+₹ 331.68
+27 Dec 2023Adobe Systems Software Bangalore I
+₹ 3,585.00
+25 Dec 2023Adobe Systems Software Bangalore I
+₹ 2,394.22
+25 Dec 2023Wasteland Entertainme Noida I
+₹ 1,900.00
+23 Dec 2023Imps Pmt 335716113187 9211
+₹ 2,60,741.00
+23 Dec 2023Spaybbps 0877253000 Banga 3356298915
+₹ 22.00
+22 Dec 2023Spaybbps 1066893111 Manga 3355202503
+₹ 397.00
+
+
+
+
+<script>
+var pdf_file_name;
+    jQuery(function() {
+        
+    jQuery(".elementor-button-wrapper").click(function(){ 
+        
+        var pdf_id = jQuery(this).find('a').attr('data-id');
+        
+        if(pdf_id == 'pdf-one'){
+            pdf_file_name = 'starling-compressed.pdf';
+        }
+        else if(pdf_id == 'pdf-two'){
+            pdf_file_name = 'brookside-compressed.pdf';
+        }
+        else if(pdf_id == 'pdf-three'){
+            pdf_file_name = 'duex-compressed.pdf';
+        }
+        else if(pdf_id == 'pdf-four'){
+            pdf_file_name = 'padmas-compressed.pdf';
+        }
+        else if(pdf_id == 'pdf-five'){
+           pdf_file_name = 'orchard-compressed.pdf'; 
+        }
+        else if(pdf_id == 'pdf-six'){
+           pdf_file_name = 'celestory-compressed.pdf'; 
+        }
+        else if(pdf_id == 'pdf-seven'){
+            pdf_file_name = 'safari-compressed.pdf';
+        }
+        else if(pdf_id == 'pdf-eight'){
+            pdf_file_name = 'aqualine-compressed.pdf';
+        }
+        else if(pdf_id == 'pdf-nine'){
+           pdf_file_name = 'terminal-compressed.pdf'; 
+        }
+        else if(pdf_id == 'pdf-ten'){
+            pdf_file_name = 'retreat-compressed.pdf';
+        }
+        else{
+            
+        }
+        var email_var = sessionStorage.getItem("email");
+        var phone_var = sessionStorage.getItem("phone");
+        var message_var = sessionStorage.getItem("message");
+        console.log("email "+email_var);
+        console.log("phone "+phone_var);
+        console.log("message "+message_var);
+        if(email_var != null && phone_var != null && message_var != null){
+            jQuery('.elementor-button-wrapper').find('a').attr('href','#');
+            var link = document.createElement('a');
+           link.href = 'https://theoutfactory.com/wp-content/uploads/2023/11/'+pdf_file_name;
+            link.download = pdf_file_name;
+            link.dispatchEvent(new MouseEvent('click'));
+        }
+    });    
+    jQuery("#layout_download_form").on("submit", function() {
+       var email = jQuery("#layout_download_form").find("#form-field-email").val();
+       var phone = jQuery("#layout_download_form").find("#form-field-field_ea80e66").val();
+       var message = jQuery("#layout_download_form").find("#form-field-message").val();
+       sessionStorage.setItem('email', email);
+       sessionStorage.setItem('phone', phone);
+       sessionStorage.setItem('message', message);
+       var link = document.createElement('a');
+       link.href = 'https://theoutfactory.com/wp-content/uploads/2023/11/'+pdf_file_name;
+        link.download = pdf_file_name;
+        link.dispatchEvent(new MouseEvent('click'));
+    });
+});
+</script>
+
+Popup | Layout | Brookside
+https://theoutfactory.com/wp-content/uploads/2023/11/brookside-compressed.pdf
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    region: "na1",
+    portalId: "44920693",
+    formId: "c662498f-2227-4a19-b93c-1c86e43b9908"
+  });
+</script>
+
+Popup | Layout | Duex
+https://theoutfactory.com/wp-content/uploads/2023/11/duex-compressed.pdf
+Popup | Layout | Padma
+https://theoutfactory.com/wp-content/uploads/2023/11/padmas-compressed.pdf
+Popup | Layout | Orchard
+https://theoutfactory.com/wp-content/uploads/2023/11/orchard-compressed.pdf
+Popup | Layout | Clerestory
+https://theoutfactory.com/wp-content/uploads/2023/11/celestory-compressed.pdf
+Popup | Layout | Safari
+https://theoutfactory.com/wp-content/uploads/2023/11/safari-compressed.pdf
+Popup | Layout | Aqualine
+https://theoutfactory.com/wp-content/uploads/2023/11/aqualine-compressed.pdf
+Popup | Layout | Terminal
+https://theoutfactory.com/wp-content/uploads/2023/11/terminal-compressed.pdf
+Popup | Layout | Retreat
+https://theoutfactory.com/wp-content/uploads/2023/11/retreat-compressed.pdf
